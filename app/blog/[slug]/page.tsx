@@ -47,6 +47,8 @@ import { client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 
+export const revalidate = 30; // revalidate at most every 30 secods
+
 async function getData(slug: string) {
   const query = `*[_type == 'blog' && slug.current == $slug] {"currentSlug": slug.current, title, content, titleImage }[0]`;
   const params = { slug };

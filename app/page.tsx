@@ -31,6 +31,8 @@ import { Button } from "@/components/ui/button";
 import { text } from "stream/consumers";
 import Link from "next/link";
 
+export const revalidate = 30; // revalidate at most every 30 secods
+
 async function getData() {
   const query = `*[_type == 'blog']{
     title,
