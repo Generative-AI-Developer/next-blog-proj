@@ -37,10 +37,12 @@ async function getData() {
     smallDescription,
     "currentSlug": slug.current,
     titleImage
-  }`;
+  }
+`;
 
   try {
     const data = await client.fetch(query);
+    console.log(data);
     return data;
   } catch (error) {
     console.error("Sanity fetch error:", error);
@@ -50,7 +52,7 @@ async function getData() {
 
 export default async function Home() {
   const data: simpleBlogCard[] = await getData();
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">

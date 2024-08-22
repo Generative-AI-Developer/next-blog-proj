@@ -70,23 +70,25 @@ export default async function BlogArticle({
   }
   console.log(data);
   return (
-    <div className="mt-8">
+    <div className="mt-8 items-center">
       <h1>
-        <span className="block text-base text-center text-primary font-simebold tracking-wide uppercase">
+        <span className="block text-base text-center text-primary font-semibold tracking-wide uppercase">
           Muhammad Asif Blog
         </span>
-        <span className="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight sm:text-4xl">
+        <span className="text-pretty mt-2 block text-3xl leading-8 font-bold tracking-tight sm:text-4xl">
           {data.title}
         </span>
       </h1>
-      <Image
-        src={urlFor(data.titleImage).url()}
-        width={600}
-        height={600}
-        alt="title Image"
-        priority
-        className="rounded-lg mt-8 border"
-      />
+      <div className="flex justify-center">
+        <Image
+          src={urlFor(data.titleImage).url()}
+          width={600}
+          height={600}
+          alt="title Image"
+          priority
+          className="rounded-lg mt-8 border"
+        />
+      </div>
       <div className="mt-16 prose prose-blue prose-xl dark: prose-invert">
         <PortableText value={data.content} />
       </div>
